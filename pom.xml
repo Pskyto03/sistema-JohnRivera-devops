@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example</groupId>
+	<artifactId>sistema-educativo-microservicios</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging> <!-- Esto indica que es un POM de tipo "padre" -->
+
+	<modules>
+		<module>eureka-server</module>
+		<module>usuarios-servicio</module>
+		<module>asignaturas-servicio</module>
+		<module>matriculas-servicio</module>
+	</modules>
+
+	<!-- Dependencias comunes para todos los microservicios -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- Dependencia común para todos los microservicios (Spring Boot Web) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>2.5.0</version> <!-- Asegúrate de usar la versión adecuada -->
+			</dependency>
+
+			<!-- Dependencia para MongoDB, para que todos los microservicios puedan acceder a MongoDB -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-mongodb</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+
+			<!-- Spring Cloud OpenFeign para la comunicación entre microservicios -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-openfeign</artifactId>
+				<version>3.0.0</version>
+			</dependency>
+
+			<!-- Dependencia de Spring Security para la protección de los microservicios -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-security</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+
+			<!-- Dependencia para Spring Boot Actuator (monitorización de servicios) -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-actuator</artifactId>
+				<version>2.5.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Plugin para Spring Boot (para construir y empaquetar los microservicios) -->
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

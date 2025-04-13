@@ -1,0 +1,47 @@
+version: '3'
+services:
+  eureka-server:
+    build:
+      context: ./eureka-server  # Asumiendo que el Dockerfile está en el directorio 'eureka-server'
+    container_name: eureka-server
+    ports:
+      - "8761:8761"  # Exponemos el puerto 8761 para Eureka Server
+    networks:
+      - eureka-network
+
+  usuarios-servicio:
+    build:
+      context: ./usuarios-servicio
+    container_name: usuarios-servicio
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    networks:
+      - eureka-network
+
+  asignaturas-servicio:
+    build:
+      context: ./asignaturas-servicio
+    container_name: asignaturas-servicio
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+    networks:
+      - eureka-network
+
+  matriculas-servicio:
+    build:
+      context: ./matriculas-servicio
+    container_name: matriculas-servicio
+    ports:
+      - "8083:8083"
+    depends_on:
+      - eureka-server
+    networks:
+      - eureka-network
+
+networks:
+  eureka-network:
+    driver: bridge
