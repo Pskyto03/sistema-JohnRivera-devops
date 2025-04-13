@@ -1,0 +1,442 @@
+Listado de rutas de carpetas
+El número de serie del volumen es 9E50-E377
+C:.
+¦   .gitattributes
+¦   .gitignore
+¦   docker-compose.yml
+¦   mvnw
+¦   mvnw.cmd
+¦   pom.xml
+¦   README.md
+¦   SE.zip
+¦   tree.txt
+¦   
++---.idea
+¦   ¦   .gitignore
+¦   ¦   compiler.xml
+¦   ¦   encodings.xml
+¦   ¦   git_toolbox_blame.xml
+¦   ¦   git_toolbox_prj.xml
+¦   ¦   jarRepositories.xml
+¦   ¦   misc.xml
+¦   ¦   uiDesigner.xml
+¦   ¦   vcs.xml
+¦   ¦   workspace.xml
+¦   ¦   
+¦   +---httpRequests
+¦           2025-04-11T202245.200.json
+¦           2025-04-11T202350.200.json
+¦           2025-04-11T202854.200.json
+¦           2025-04-11T203158.200.json
+¦           2025-04-11T203238.200.json
+¦           2025-04-11T203655.200.json
+¦           2025-04-11T210657.403.json
+¦           2025-04-11T211040.201.json
+¦           2025-04-11T211100.200.json
+¦           2025-04-11T211546.403.json
+¦           2025-04-11T211601.403.json
+¦           2025-04-11T211830.201.json
+¦           2025-04-11T211837.200.json
+¦           2025-04-11T212539.200.json
+¦           2025-04-11T212620.200.json
+¦           2025-04-11T212710.200.json
+¦           2025-04-11T213041.200.json
+¦           2025-04-11T213300.200.json
+¦           2025-04-11T213307.200.json
+¦           2025-04-11T213321.201.json
+¦           2025-04-11T213329.200.json
+¦           2025-04-11T213342.200.json
+¦           2025-04-11T213418.201.json
+¦           2025-04-11T213425.200.json
+¦           2025-04-11T213706.200.json
+¦           2025-04-11T213800.200.json
+¦           2025-04-11T214043.200.json
+¦           2025-04-11T214241.200.json
+¦           2025-04-11T215154.200.json
+¦           2025-04-11T222432.200.json
+¦           2025-04-11T222738.401.json
+¦           2025-04-11T222753.201.json
+¦           2025-04-11T223011.200.json
+¦           2025-04-11T223807.200.json
+¦           2025-04-11T224323.200.json
+¦           2025-04-11T224350.200.json
+¦           2025-04-11T224412.200.json
+¦           2025-04-11T224512.201.json
+¦           2025-04-12T000817.201.json
+¦           http-client.cookies
+¦           http-requests-log.http
+¦           
++---.mvn
+¦   +---wrapper
+¦           maven-wrapper.properties
+¦           
++---asignaturas-servicio
+¦   ¦   .gitattributes
+¦   ¦   .gitignore
+¦   ¦   Dockerfile
+¦   ¦   HELP.md
+¦   ¦   mvnw
+¦   ¦   mvnw.cmd
+¦   ¦   pom.xml
+¦   ¦   
+¦   +---.mvn
+¦   ¦   +---wrapper
+¦   ¦           maven-wrapper.properties
+¦   ¦           
+¦   +---src
+¦   ¦   +---main
+¦   ¦   ¦   +---java
+¦   ¦   ¦   ¦   +---com
+¦   ¦   ¦   ¦       +---example
+¦   ¦   ¦   ¦           +---asignaturas
+¦   ¦   ¦   ¦               ¦   AsignaturasServicioApplication.java
+¦   ¦   ¦   ¦               ¦   
+¦   ¦   ¦   ¦               +---controller
+¦   ¦   ¦   ¦               ¦       AsignaturaController.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---model
+¦   ¦   ¦   ¦               ¦       Asignatura.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---repository
+¦   ¦   ¦   ¦               ¦       AsignaturaRepository.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---security
+¦   ¦   ¦   ¦               ¦       SecurityConfig.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---service
+¦   ¦   ¦   ¦                       AsignaturaService.java
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---resources
+¦   ¦   ¦       ¦   application.properties
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +---static
+¦   ¦   ¦       +---templates
+¦   ¦   +---test
+¦   ¦       +---java
+¦   ¦           +---com
+¦   ¦               +---example
+¦   ¦                   +---asignaturas
+¦   ¦                       ¦   AsignaturasServicioApplicationTests.java
+¦   ¦                       ¦   
+¦   ¦                       +---controller
+¦   ¦                               AsignaturaControllerTest.java
+¦   ¦                               
+¦   +---target
+¦       +---classes
+¦       ¦   ¦   application.properties
+¦       ¦   ¦   
+¦       ¦   +---com
+¦       ¦       +---example
+¦       ¦           +---asignaturas
+¦       ¦               ¦   AsignaturasServicioApplication.class
+¦       ¦               ¦   
+¦       ¦               +---controller
+¦       ¦               ¦       AsignaturaController.class
+¦       ¦               ¦       
+¦       ¦               +---model
+¦       ¦               ¦       Asignatura.class
+¦       ¦               ¦       
+¦       ¦               +---repository
+¦       ¦               ¦       AsignaturaRepository.class
+¦       ¦               ¦       
+¦       ¦               +---security
+¦       ¦               ¦       SecurityConfig.class
+¦       ¦               ¦       
+¦       ¦               +---service
+¦       ¦                       AsignaturaService.class
+¦       ¦                       
+¦       +---generated-sources
+¦       ¦   +---annotations
+¦       +---generated-test-sources
+¦       ¦   +---test-annotations
+¦       +---maven-status
+¦       ¦   +---maven-compiler-plugin
+¦       ¦       +---compile
+¦       ¦       ¦   +---default-compile
+¦       ¦       ¦           createdFiles.lst
+¦       ¦       ¦           inputFiles.lst
+¦       ¦       ¦           
+¦       ¦       +---testCompile
+¦       ¦           +---default-testCompile
+¦       ¦                   createdFiles.lst
+¦       ¦                   inputFiles.lst
+¦       ¦                   
+¦       +---surefire-reports
+¦       ¦       com.example.asignaturas.AsignaturasServicioApplicationTests.txt
+¦       ¦       com.example.asignaturas.controller.AsignaturaControllerTest.txt
+¦       ¦       TEST-com.example.asignaturas.AsignaturasServicioApplicationTests.xml
+¦       ¦       TEST-com.example.asignaturas.controller.AsignaturaControllerTest.xml
+¦       ¦       
+¦       +---test-classes
+¦           +---com
+¦               +---example
+¦                   +---asignaturas
+¦                       ¦   AsignaturasServicioApplicationTests.class
+¦                       ¦   
+¦                       +---controller
+¦                               AsignaturaControllerTest.class
+¦                               
++---eureka-server
+¦   ¦   .gitattributes
+¦   ¦   .gitignore
+¦   ¦   Dockerfile
+¦   ¦   HELP.md
+¦   ¦   mvnw
+¦   ¦   mvnw.cmd
+¦   ¦   pom.xml
+¦   ¦   
+¦   +---.mvn
+¦   ¦   +---wrapper
+¦   ¦           maven-wrapper.properties
+¦   ¦           
+¦   +---src
+¦   ¦   +---main
+¦   ¦   ¦   +---java
+¦   ¦   ¦   ¦   +---com
+¦   ¦   ¦   ¦       +---example
+¦   ¦   ¦   ¦           +---eureka
+¦   ¦   ¦   ¦                   EurekaServerApplication.java
+¦   ¦   ¦   ¦                   
+¦   ¦   ¦   +---resources
+¦   ¦   ¦           application.properties
+¦   ¦   ¦           
+¦   ¦   +---test
+¦   ¦       +---java
+¦   ¦           +---com
+¦   ¦               +---example
+¦   ¦                   +---eureka
+¦   ¦                           EurekaServerApplicationTests.java
+¦   ¦                           
+¦   +---target
+¦       ¦   eureka-server-0.0.1-SNAPSHOT.jar
+¦       ¦   eureka-server-0.0.1-SNAPSHOT.jar.original
+¦       ¦   
+¦       +---classes
+¦       ¦   ¦   application.properties
+¦       ¦   ¦   
+¦       ¦   +---com
+¦       ¦       +---example
+¦       ¦           +---eureka
+¦       ¦                   EurekaServerApplication.class
+¦       ¦                   
+¦       +---generated-sources
+¦       ¦   +---annotations
+¦       +---generated-test-sources
+¦       ¦   +---test-annotations
+¦       +---maven-archiver
+¦       ¦       pom.properties
+¦       ¦       
+¦       +---maven-status
+¦       ¦   +---maven-compiler-plugin
+¦       ¦       +---compile
+¦       ¦       ¦   +---default-compile
+¦       ¦       ¦           createdFiles.lst
+¦       ¦       ¦           inputFiles.lst
+¦       ¦       ¦           
+¦       ¦       +---testCompile
+¦       ¦           +---default-testCompile
+¦       ¦                   createdFiles.lst
+¦       ¦                   inputFiles.lst
+¦       ¦                   
+¦       +---test-classes
++---matriculas-servicio
+¦   ¦   .gitattributes
+¦   ¦   .gitignore
+¦   ¦   Dockerfile
+¦   ¦   HELP.md
+¦   ¦   mvnw
+¦   ¦   mvnw.cmd
+¦   ¦   pom.xml
+¦   ¦   
+¦   +---.mvn
+¦   ¦   +---wrapper
+¦   ¦           maven-wrapper.properties
+¦   ¦           
+¦   +---src
+¦   ¦   +---main
+¦   ¦   ¦   +---java
+¦   ¦   ¦   ¦   +---com
+¦   ¦   ¦   ¦       +---example
+¦   ¦   ¦   ¦           +---matriculas
+¦   ¦   ¦   ¦               ¦   MatriculasServicioApplication.java
+¦   ¦   ¦   ¦               ¦   
+¦   ¦   ¦   ¦               +---client
+¦   ¦   ¦   ¦               ¦       AsignaturaClient.java
+¦   ¦   ¦   ¦               ¦       UsuarioClient.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---controller
+¦   ¦   ¦   ¦               ¦       MatriculaController.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---model
+¦   ¦   ¦   ¦               ¦       Matricula.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---repository
+¦   ¦   ¦   ¦               ¦       MatriculaRepository.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---security
+¦   ¦   ¦   ¦               ¦       SecurityConfig.java
+¦   ¦   ¦   ¦               ¦       
+¦   ¦   ¦   ¦               +---service
+¦   ¦   ¦   ¦                       MatriculaService.java
+¦   ¦   ¦   ¦                       
+¦   ¦   ¦   +---resources
+¦   ¦   ¦       ¦   application.properties
+¦   ¦   ¦       ¦   
+¦   ¦   ¦       +---static
+¦   ¦   ¦       +---templates
+¦   ¦   +---test
+¦   ¦       +---java
+¦   ¦           +---com
+¦   ¦               +---example
+¦   ¦                   +---matriculas
+¦   ¦                       ¦   MatriculasServicioApplicationTests.java
+¦   ¦                       ¦   
+¦   ¦                       +---controller
+¦   ¦                               MatriculaControllerTest.java
+¦   ¦                               
+¦   +---target
+¦       +---classes
+¦       ¦   ¦   application.properties
+¦       ¦   ¦   
+¦       ¦   +---com
+¦       ¦       +---example
+¦       ¦           +---matriculas
+¦       ¦               ¦   MatriculasServicioApplication.class
+¦       ¦               ¦   
+¦       ¦               +---client
+¦       ¦               ¦       AsignaturaClient.class
+¦       ¦               ¦       UsuarioClient.class
+¦       ¦               ¦       
+¦       ¦               +---controller
+¦       ¦               ¦       MatriculaController.class
+¦       ¦               ¦       
+¦       ¦               +---model
+¦       ¦               ¦       Matricula.class
+¦       ¦               ¦       
+¦       ¦               +---repository
+¦       ¦               ¦       MatriculaRepository.class
+¦       ¦               ¦       
+¦       ¦               +---security
+¦       ¦               ¦       SecurityConfig.class
+¦       ¦               ¦       
+¦       ¦               +---service
+¦       ¦                       MatriculaService.class
+¦       ¦                       
+¦       +---generated-sources
+¦       ¦   +---annotations
+¦       +---generated-test-sources
+¦       ¦   +---test-annotations
+¦       +---maven-status
+¦       ¦   +---maven-compiler-plugin
+¦       ¦       +---compile
+¦       ¦           +---default-compile
+¦       ¦                   createdFiles.lst
+¦       ¦                   inputFiles.lst
+¦       ¦                   
+¦       +---test-classes
++---usuarios-servicio
+    ¦   .gitattributes
+    ¦   .gitignore
+    ¦   Dockerfile
+    ¦   HELP.md
+    ¦   mvnw
+    ¦   mvnw.cmd
+    ¦   pom.xml
+    ¦   
+    +---.mvn
+    ¦   +---wrapper
+    ¦           maven-wrapper.properties
+    ¦           
+    +---src
+    ¦   +---main
+    ¦   ¦   +---java
+    ¦   ¦   ¦   +---com
+    ¦   ¦   ¦       +---example
+    ¦   ¦   ¦           +---usuarios
+    ¦   ¦   ¦               ¦   UsuariosServicioApplication.java
+    ¦   ¦   ¦               ¦   
+    ¦   ¦   ¦               +---controller
+    ¦   ¦   ¦               ¦       UsuarioController.java
+    ¦   ¦   ¦               ¦       
+    ¦   ¦   ¦               +---model
+    ¦   ¦   ¦               ¦       Usuario.java
+    ¦   ¦   ¦               ¦       
+    ¦   ¦   ¦               +---repository
+    ¦   ¦   ¦               ¦       UsuarioRepository.java
+    ¦   ¦   ¦               ¦       
+    ¦   ¦   ¦               +---security
+    ¦   ¦   ¦               ¦       SecurityConfig.java
+    ¦   ¦   ¦               ¦       
+    ¦   ¦   ¦               +---service
+    ¦   ¦   ¦                       UsuarioService.java
+    ¦   ¦   ¦                       
+    ¦   ¦   +---resources
+    ¦   ¦       ¦   application.properties
+    ¦   ¦       ¦   
+    ¦   ¦       +---static
+    ¦   ¦       +---templates
+    ¦   +---test
+    ¦       +---java
+    ¦           +---com
+    ¦               +---example
+    ¦                   +---usuarios
+    ¦                       ¦   UsuariosServicioApplicationTests.java
+    ¦                       ¦   
+    ¦                       +---controller
+    ¦                               UsuarioControllerTest.java
+    ¦                               
+    +---target
+        +---classes
+        ¦   ¦   application.properties
+        ¦   ¦   
+        ¦   +---com
+        ¦       +---example
+        ¦           +---usuarios
+        ¦               ¦   UsuariosServicioApplication.class
+        ¦               ¦   
+        ¦               +---controller
+        ¦               ¦       UsuarioController.class
+        ¦               ¦       
+        ¦               +---model
+        ¦               ¦       Usuario.class
+        ¦               ¦       
+        ¦               +---repository
+        ¦               ¦       UsuarioRepository.class
+        ¦               ¦       
+        ¦               +---security
+        ¦               ¦       SecurityConfig.class
+        ¦               ¦       
+        ¦               +---service
+        ¦                       UsuarioService.class
+        ¦                       
+        +---generated-sources
+        ¦   +---annotations
+        +---generated-test-sources
+        ¦   +---test-annotations
+        +---maven-status
+        ¦   +---maven-compiler-plugin
+        ¦       +---compile
+        ¦       ¦   +---default-compile
+        ¦       ¦           createdFiles.lst
+        ¦       ¦           inputFiles.lst
+        ¦       ¦           
+        ¦       +---testCompile
+        ¦           +---default-testCompile
+        ¦                   createdFiles.lst
+        ¦                   inputFiles.lst
+        ¦                   
+        +---surefire-reports
+        ¦       com.example.usuarios.controller.UsuarioControllerTest.txt
+        ¦       com.example.usuarios.UsuariosServicioApplicationTests.txt
+        ¦       TEST-com.example.usuarios.controller.UsuarioControllerTest.xml
+        ¦       TEST-com.example.usuarios.UsuariosServicioApplicationTests.xml
+        ¦       
+        +---test-classes
+            +---com
+                +---example
+                    +---usuarios
+                        ¦   UsuariosServicioApplicationTests.class
+                        ¦   
+                        +---controller
+                                UsuarioControllerTest.class
+                                

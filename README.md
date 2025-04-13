@@ -108,5 +108,13 @@ pgsql
 
 ### Pruebas Unitarias
 Para ejecutar solo las pruebas unitarias:
-```bash
+```
 ./mvnw test -Dtest=ProductoServiceTest
+
+# Pruebas de ejcucion local
+
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+
