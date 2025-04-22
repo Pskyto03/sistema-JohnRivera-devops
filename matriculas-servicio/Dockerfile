@@ -5,10 +5,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copiar el archivo JAR del microservicio
-COPY target/matriculas-servicio-0.0.1-SNAPSHOT.jar matriculas-servicio.jar
+COPY target/matriculas-0.0.1-SNAPSHOT.jar matriculas.jar
 
 # Exponer el puerto en el que se ejecutará el microservicio
 EXPOSE 8083
 
 # Comando para ejecutar la aplicación Java
-ENTRYPOINT ["java", "-jar", "matriculas-servicio.jar"]
+ENTRYPOINT ["java", "-jar", "matriculas.jar"]

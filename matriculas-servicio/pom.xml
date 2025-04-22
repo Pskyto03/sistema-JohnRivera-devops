@@ -96,19 +96,19 @@
 		</dependency>
 		<!-- Microservicios externos, se implementa para comunicación entre ellos-->
 		<!-- Dependencia para el microservicio usuarios -->
-		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>usuarios-servicio</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.example</groupId>-->
+<!--			<artifactId>usuarios</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 		<!-- Dependencia para el microservicio asignaturas -->
-		<dependency>
-			<groupId>com.example</groupId>
-			<artifactId>asignaturas-servicio</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.example</groupId>-->
+<!--			<artifactId>asignaturas</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
