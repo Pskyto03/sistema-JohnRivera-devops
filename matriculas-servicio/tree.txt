@@ -1,0 +1,110 @@
+Listado de rutas de carpetas
+El número de serie del volumen es 28EA-2AAC
+C:.
+│   .gitattributes
+│   .gitignore
+│   Dockerfile
+│   mvnw
+│   mvnw.cmd
+│   pom.xml
+│   tree.txt
+│   
+├───.mvn
+│   └───wrapper
+│           maven-wrapper.properties
+│           
+├───src
+│   ├───main
+│   │   ├───java
+│   │   │   └───com
+│   │   │       └───example
+│   │   │           └───matriculas
+│   │   │               │   MatriculasServicioApplication.java
+│   │   │               │   
+│   │   │               ├───client
+│   │   │               │       AsignaturaClient.java
+│   │   │               │       UsuarioClient.java
+│   │   │               │       
+│   │   │               ├───controller
+│   │   │               │       MatriculaController.java
+│   │   │               │       
+│   │   │               ├───model
+│   │   │               │       Matricula.java
+│   │   │               │       
+│   │   │               ├───repository
+│   │   │               │       MatriculaRepository.java
+│   │   │               │       
+│   │   │               ├───security
+│   │   │               │       SecurityConfig.java
+│   │   │               │       
+│   │   │               └───service
+│   │   │                       MatriculaService.java
+│   │   │                       
+│   │   └───resources
+│   │           application.properties
+│   │           
+│   └───test
+│       └───java
+│           └───com
+│               └───example
+│                   └───matriculas
+│                       │   MatriculasServicioApplicationTests.java
+│                       │   
+│                       └───controller
+│                               MatriculaControllerTest.java
+│                               
+└───target
+    │   matriculas-0.0.1-SNAPSHOT.jar
+    │   matriculas-0.0.1-SNAPSHOT.jar.original
+    │   
+    ├───classes
+    │   │   application.properties
+    │   │   
+    │   └───com
+    │       └───example
+    │           └───matriculas
+    │               │   MatriculasServicioApplication.class
+    │               │   
+    │               ├───client
+    │               │       AsignaturaClient.class
+    │               │       UsuarioClient.class
+    │               │       
+    │               ├───controller
+    │               │       MatriculaController.class
+    │               │       
+    │               ├───model
+    │               │       Matricula.class
+    │               │       
+    │               ├───repository
+    │               │       MatriculaRepository.class
+    │               │       
+    │               ├───security
+    │               │       SecurityConfig.class
+    │               │       
+    │               └───service
+    │                       MatriculaService.class
+    │                       
+    ├───generated-sources
+    │   └───annotations
+    ├───generated-test-sources
+    │   └───test-annotations
+    ├───maven-archiver
+    │       pom.properties
+    │       
+    ├───maven-status
+    │   └───maven-compiler-plugin
+    │       ├───compile
+    │       │   └───default-compile
+    │       │           createdFiles.lst
+    │       │           inputFiles.lst
+    │       │           
+    │       └───testCompile
+    │           └───default-testCompile
+    │                   createdFiles.lst
+    │                   inputFiles.lst
+    │                   
+    └───test-classes
+        └───com
+            └───example
+                └───matriculas
+                    └───controller

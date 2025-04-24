@@ -1,66 +1,50 @@
-/*
 package com.example.asignaturas.controller;
 
 import com.example.asignaturas.model.Asignatura;
-import com.example.asignaturas.service.AsignaturaService;
 import com.example.asignaturas.repository.AsignaturaRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import java.util.Optional;
 
-@SpringBootTest  // Usamos @SpringBootTest para cargar el contexto completo
-class AsignaturaControllerTest {
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+@ExtendWith(MockitoExtension.class)
+public class AsignaturaControllerTest {
+
+    @Mock
+    private AsignaturaRepository asignaturaRepository;
 
     @InjectMocks
-    private AsignaturaController asignaturaController;  // El controlador que estamos probando
+    private AsignaturaController asignaturaController;
 
-    @Mock
-    private AsignaturaService asignaturaService;  // El servicio simulado
+    @Test
+    public void getAsignaturaById_Existente_DeberiaRetornar200() {
+        // Configurar mock
+        Asignatura asignaturaMock = new Asignatura("Física", "Termodinámica");
+        asignaturaMock.setId("1");
+        when(asignaturaRepository.findById("1")).thenReturn(Optional.of(asignaturaMock));
 
-    @Mock
-    private AsignaturaRepository asignaturaRepository;  // El repositorio simulado
+        // Ejecutar
+        ResponseEntity<Asignatura> response = asignaturaController.getAsignatura("1");
 
-    private MockMvc mockMvc;
-
-    @BeforeEach
-    void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(asignaturaController).build();  // Configuramos MockMvc
+        // Verificar
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Física", response.getBody().getNombre());
     }
 
     @Test
-    void testCrearAsignatura() throws Exception {
-        // Crear un objeto Asignatura para simular la respuesta del servicio
-        Asignatura asignatura = new Asignatura("Matemáticas", "Curso de Matemáticas");
+    public void getAsignaturaById_NoExistente_DeberiaRetornar404() {
+        when(asignaturaRepository.findById("99")).thenReturn(Optional.empty());
 
-        // Simulamos que el servicio devuelve la asignatura creada
-        when(asignaturaService.crearAsignatura("Matemáticas", "Curso de Matemáticas")).thenReturn(asignatura);
+        ResponseEntity<Asignatura> response = asignaturaController.getAsignatura("99");
 
-        // Realizamos la solicitud POST usando MockMvcRequestBuilders
-        ResultActions resultActions = mockMvc.perform(post("/asignaturas")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content("{\"nombre\":\"Matemáticas\", \"descripcion\":\"Curso de Matemáticas\"}"))
-                .andExpect(status().isCreated())  // Verificamos que la respuesta sea 201 Created
-                .andExpect(jsonPath("$.nombre").exists())
-                .andExpect(jsonPath("$.nombre").value("Matemáticas"))  // Verificamos el nombre de la asignatura
-                .andExpect(jsonPath("$.descripcion").value("Curso de Matemáticas"));  // Verificamos la descripción
-
-        // Se imprime la respuesta de la solicitud para depuración (si es necesario)
-        String responseContent = resultActions.andReturn().getResponse().getContentAsString();
-        System.out.println("Response Body: " + responseContent);
-
-        // Otras verificaciones o acciones adicionales pueden agregarse aquí
+        assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
-
 }
-*/

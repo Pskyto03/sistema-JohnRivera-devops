@@ -2,12 +2,26 @@ version: '3'
 services:
   eureka-server:
     build:
-      context: ./eureka-server  # Asumiendo que el Dockerfile está en el directorio 'eureka-server'
+      context: ./eureka-server
     container_name: eureka-server
     ports:
-      - "8761:8761"  # Exponemos el puerto 8761 para Eureka Server
+      - "8761:8761"
     networks:
       - eureka-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d # added to run init scripts
+    networks:
+      - eureka-network
+    command: ["--noauth"]
 
   usuarios-servicio:
     build:
@@ -17,8 +31,16 @@ services:
       - "8081:8081"
     depends_on:
       - eureka-server
+      - mongodb
     networks:
       - eureka-network
+    extra_hosts:
+      - "usuarios-servicio:127.0.0.1"
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=localhost
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/usuariosdb
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
 
   asignaturas-servicio:
     build:
@@ -28,8 +50,16 @@ services:
       - "8082:8082"
     depends_on:
       - eureka-server
+      - mongodb
     networks:
       - eureka-network
+    extra_hosts:
+      - "asignaturas-servicio:127.0.0.1"
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=localhost
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/asignaturasdb
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
 
   matriculas-servicio:
     build:
@@ -39,9 +69,20 @@ services:
       - "8083:8083"
     depends_on:
       - eureka-server
+      - mongodb
     networks:
       - eureka-network
+    extra_hosts:
+      - "matriculas-servicio:127.0.0.1"
+    environment:
+      - EUREKA_INSTANCE_HOSTNAME=localhost
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017/matriculasdb
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka-server:8761/eureka
 
 networks:
   eureka-network:
     driver: bridge
+
+volumes:
+  mongodb_data:

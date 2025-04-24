@@ -1,4 +1,4 @@
-/*
+
 package com.example.matriculas;
 
 import org.junit.jupiter.api.Test;
@@ -12,4 +12,4 @@ class MatriculasServicioApplicationTests {
 	}
 
 }
-*/
+

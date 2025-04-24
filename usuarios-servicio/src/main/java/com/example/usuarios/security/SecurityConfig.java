@@ -1,48 +1,70 @@
 package com.example.usuarios.security;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.example.usuarios.model.Usuario;
+import com.example.usuarios.repository.UsuarioRepository;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig {
 
-    // Configuración de seguridad para la autenticación básica
+    private final JwtAuthFilter jwtAuthFilter;
+
+    public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
+        this.jwtAuthFilter = jwtAuthFilter;
+    }
+    
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // Configuración explícita de los endpoints y la autenticación
         http
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/usuarios/**"))  // Ignorar CSRF en /usuarios
-                .authorizeHttpRequests(authorizeRequests ->
-                        authorizeRequests
-                                .requestMatchers("/usuarios/**").authenticated()  // Requiere autenticación para /usuarios
-                                .anyRequest().permitAll()  // Permite acceso sin autenticación a otros endpoints
-                )
-                .httpBasic(Customizer.withDefaults());  // Habilita la autenticación básica con configuración predeterminada
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/usuarios/auth/**").permitAll() // Permitir login y registro
+                .requestMatchers("/usuarios/**").permitAll()
+                .anyRequest().authenticated() // Todo lo demás requiere autenticación
+            )
+            .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+            .formLogin(form -> form.disable()) // Deshabilitar el form login por defecto
+            .httpBasic(basic -> basic.disable()); // Deshabilitar autenticación básica
 
         return http.build();
     }
 
-    // Crear usuarios en memoria para la autenticación básica
     @Bean
-    public UserDetailsService userDetailsService() {
-        var user = User.withUsername("admin")
-                .password(passwordEncoder().encode("admin"))  // Codificación de la contraseña con BCrypt
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user);  // Almacena el usuario en memoria
+    CommandLineRunner initDatabase(UsuarioRepository usuarioRepo, PasswordEncoder encoder) {
+        return args -> {
+            if (!usuarioRepo.existsByUsername("admin")) {
+                Usuario admin = new Usuario();
+                admin.setNombre("Admin");
+                admin.setUsername("admin");
+                admin.setPassword(encoder.encode("admin123"));
+                admin.setRol("ADMIN"); // ← Rol especial
+                usuarioRepo.save(admin);
+            }
+        };
     }
 
-    // Codificador de contraseñas con BCrypt
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();  // Usamos un codificador fuerte para las contraseñas
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
+        return config.getAuthenticationManager();
     }
 }

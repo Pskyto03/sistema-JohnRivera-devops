@@ -5,11 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients // <-- Habilita Feign
 public class MatriculasServicioApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(MatriculasServicioApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(MatriculasServicioApplication.class, args);
+    }
 }
