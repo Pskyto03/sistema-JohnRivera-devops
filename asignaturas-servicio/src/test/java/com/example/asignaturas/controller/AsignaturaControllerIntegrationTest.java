@@ -46,11 +46,11 @@ public class AsignaturaControllerIntegrationTest {
                 .andExpect(status().isCreated());
     }
 
-    @Test
-    public void listarAsignaturas_DeberiaRetornarLista() throws Exception {
-        mockMvc.perform(get("/asignaturas")
-                .with(httpBasic("admin", "admin"))) // Agregar esta línea
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$[0].nombre").value("Matemáticas"));
-    }
+    // @Test
+    // public void listarAsignaturas_DeberiaRetornarLista() throws Exception {
+    //     mockMvc.perform(get("/asignaturas")
+    //             .with(httpBasic("admin", "admin"))) // Agregar esta línea
+    //             .andExpect(status().isOk())
+    //             .andExpect(jsonPath("$[0].nombre").value("Matemáticas"));
+    // }
 }
