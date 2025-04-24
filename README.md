@@ -17,6 +17,9 @@ Proyecto básico para aprender **Spring Boot**, **Spring Security**, **programac
 -	Internacionalización (i18n)
 -	Postman (para pruebas)
 -	Lombok
+-   Docker
+-   MongoDB
+-   JWT
 
 ---
 ## Internacionalización Endpoint de prueba:
@@ -25,10 +28,10 @@ yaml
 
 ---
 ## Seguridad
-
--	Autenticación básica (HTTP Basic)
--	Usuario: `admin`
--	Contraseña: `admin`
+POST /usuarios/auth/login
+-	Autenticación JWT
+-	Usuario: `jarr1`
+-	Contraseña: `Password123`
 
 ---
  
@@ -54,7 +57,7 @@ DELETE	`/api/productos/{id}`	Eliminar producto por ID
 
 -	Java 17
 -	Maven 3.8+
--	MongoDB local (en `localhost:27017`)
+-   Docker
 ---
 
 ## Cómo correr el proyecto
@@ -66,9 +69,11 @@ git clone https://github.com/tuusuario/gestion-productos-reactivo.git
 # Entrar al proyecto
 cd gestion-productos-reactivo
 
-# Ejecutar el proyecto
+# Ejecutar el proyecto (maven)
 ./mvnw spring-boot:run
- 
+
+# Ejecutar el proyecto (Docker)
+ docker-compose up -d
 
 
 
